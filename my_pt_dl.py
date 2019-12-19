@@ -156,7 +156,7 @@ if __name__ == '__main__':
     def window_fn():
         return torch.sqrt(torch.hann_window)
     input_dir = '.'
-    ds_mix_PT = Dataset(input_dir=input_dir, data_scp='mix.scp', transform=STFT_PT(128, window=window, abs_val=False, log_val=False, transpose=False))
+    ds_mix_PT = Dataset(input_dir=input_dir, data_scp='wav.scp', transform=STFT_PT(128, window=window, abs_val=False, log_val=False, transpose=False))
     # batch size
     bs = 4
     dl_mix = DataLoader(ds_mix_PT, batch_size=bs, shuffle=False, num_workers=1, collate_fn=custom_collate_cp)
